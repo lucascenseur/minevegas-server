@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Télécharge le lanceur Fabric, Fabric API et MineVegas Casino.
+# Télécharge le lanceur Fabric, Fabric API, MineVegas Casino et Dungeons and Taverns.
 # Le serveur vanilla Mojang est récupéré par Fabric au premier démarrage.
 set -euo pipefail
 
@@ -21,6 +21,11 @@ FABRIC_API_SHA1="8f8a23d6c9fbf7b075b31b4fb0a1007b0488d1d2"
 MINEVEGAS_FILE="mods/minevegas-casino-fabric-26.3-1.0.4.jar"
 MINEVEGAS_URL="https://edge.forgecdn.net/files/9275/496/minevegas-casino-fabric-26.3-1.0.4.jar"
 MINEVEGAS_SHA1="0ac3d8668e9555f2a100e63db13609fa77ace1a9"
+
+# Nom de fichier sans crochets : certains shells et outils les gèrent mal.
+DNT_FILE="mods/dungeons-and-taverns-6.0.2-fabric.jar"
+DNT_URL="https://edge.forgecdn.net/files/9025/950/dungeons-and-taverns-6.0.2%20%5bFabric%5d.jar"
+DNT_SHA1="172ba3915c8da4c46bdf63a24a8cff2b485b838d"
 
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
@@ -69,6 +74,7 @@ mkdir -p mods
 download "$SERVER_URL" "$SERVER_FILE" "$SERVER_SHA1"
 download "$FABRIC_API_URL" "$FABRIC_API_FILE" "$FABRIC_API_SHA1"
 download "$MINEVEGAS_URL" "$MINEVEGAS_FILE" "$MINEVEGAS_SHA1"
+download "$DNT_URL" "$DNT_FILE" "$DNT_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -80,6 +86,12 @@ done
 for jar in mods/minevegas-casino-*.jar; do
   if [[ "$jar" != "$MINEVEGAS_FILE" ]]; then
     echo "Suppression de l'ancienne version de MineVegas : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/dungeons-and-taverns*.jar; do
+  if [[ "$jar" != "$DNT_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Dungeons and Taverns : $jar"
     rm -f "$jar"
   fi
 done

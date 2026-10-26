@@ -14,7 +14,10 @@ set +a
 
 MEMORY="${MEMORY:-4G}"
 
-if [[ ! -f server.jar || ! -f mods/fabric-api-0.165.0+26.3.jar || ! -f mods/minevegas-casino-fabric-26.3-1.0.4.jar ]]; then
+if [[ ! -f server.jar \
+  || ! -f mods/fabric-api-0.165.0+26.3.jar \
+  || ! -f mods/minevegas-casino-fabric-26.3-1.0.4.jar \
+  || ! -f mods/dungeons-and-taverns-6.0.2-fabric.jar ]]; then
   echo "Fichiers manquants. Lance d'abord ./install.sh" >&2
   exit 1
 fi
