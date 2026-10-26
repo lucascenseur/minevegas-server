@@ -1,0 +1,18 @@
+[Unit]
+Description=Serveur Minecraft MineVegas Casino
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=minecraft
+WorkingDirectory=/opt/minevegas
+ExecStart=/opt/minevegas/start.sh
+Restart=on-failure
+RestartSec=15
+SuccessExitStatus=0 130 143
+TimeoutStopSec=60
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

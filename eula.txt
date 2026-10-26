@@ -1,0 +1,3 @@
+# Lancer ce serveur vaut acceptation du CLUF Minecraft :
+# https://www.minecraft.net/eula
+eula=true
