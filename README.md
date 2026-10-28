@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas Casino 1.0.4, Dungeons and Taverns 6.0.2 (Fabric) |
+| Mods | MineVegas Casino 1.0.4, Dungeons and Taverns 6.0.2, Lithium 0.26.2, FerriteCore 9.0.0 |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -109,7 +109,9 @@ Le mod est client et serveur. Chaque joueur installe :
    - `minevegas-casino-fabric-26.3-1.0.4.jar`
    - `dungeons-and-taverns-6.0.2-fabric.jar`
 
-Copie-les dans le dossier `mods` du profil Fabric. N'ajoute pas d'anciens mods `casinodeco` ou `casinosound` : MineVegas les remplace et refuse de démarrer avec eux.
+Lithium et FerriteCore sont des optimisations serveur : les joueurs n'ont pas besoin de les installer pour se connecter.
+
+Copie les jars client dans le dossier `mods` du profil Fabric. N'ajoute pas d'anciens mods `casinodeco` ou `casinosound` : MineVegas les remplace et refuse de démarrer avec eux.
 
 [Dungeons and Taverns](https://www.curseforge.com/minecraft/mc-mods/dungeon-and-taverns) ajoute des tavernes et donjons vanilla-like. Les structures n'apparaissent que dans les chunks non explorés. Pour en trouver une : `/locate structure nova_structures:` puis le nom proposé.
 
