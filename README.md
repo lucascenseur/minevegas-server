@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas Casino 1.0.4, Dungeons and Taverns 6.0.2, Lithium 0.26.2, FerriteCore 9.0.0, Distant Horizons 3.3.4 |
+| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -108,9 +108,12 @@ Le mod est client et serveur. Chaque joueur installe :
    - `fabric-api-0.165.0+26.3.jar`
    - `minevegas-casino-fabric-26.3-1.0.4.jar`
    - `dungeons-and-taverns-6.0.2-fabric.jar`
-   - `DistantHorizons-3.3.4-26.3-fabric-neoforge.jar` (pour voir loin)
+   - `DistantHorizons-3.3.4-26.3-fabric-neoforge.jar`
+   - `Jade-mc26.3-Fabric-26.3.5.jar`
+   - `appleskin-fabric-mc26.3-3.0.10.jar`
+   - `xaerominimap-fabric-26.3-26.6.2.jar`
 
-Lithium et FerriteCore sont des optimisations serveur : les joueurs n'ont pas besoin de les installer pour se connecter. Distant Horizons peut rester optionnel côté client, mais sans le même jar le rendu distant ne s'affiche pas.
+Lithium et FerriteCore sont des optimisations serveur : les joueurs n'en ont pas besoin. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant.
 
 Copie les jars client dans le dossier `mods` du profil Fabric. N'ajoute pas d'anciens mods `casinodeco` ou `casinosound` : MineVegas les remplace et refuse de démarrer avec eux.
 

@@ -39,6 +39,18 @@ DISTANT_HORIZONS_FILE="mods/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar"
 DISTANT_HORIZONS_URL="https://cdn.modrinth.com/data/uCdwusMi/versions/TGgEbP9A/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar"
 DISTANT_HORIZONS_SHA1="310c0363068dfae18e91f799ed671a591b6ad49a"
 
+JADE_FILE="mods/Jade-mc26.3-Fabric-26.3.5.jar"
+JADE_URL="https://cdn.modrinth.com/data/nvQzSEkH/versions/71CTWqdE/Jade-mc26.3-Fabric-26.3.5.jar"
+JADE_SHA1="da61413c586c8918c14e2bbfdc808ce2d56ea9df"
+
+APPLESKIN_FILE="mods/appleskin-fabric-mc26.3-3.0.10.jar"
+APPLESKIN_URL="https://cdn.modrinth.com/data/EsAfCjCV/versions/PHjDtQay/appleskin-fabric-mc26.3-3.0.10.jar"
+APPLESKIN_SHA1="3d19e40c5f97186857db98e622c01c2cd0030497"
+
+XAEROS_MINIMAP_FILE="mods/xaerominimap-fabric-26.3-26.6.2.jar"
+XAEROS_MINIMAP_URL="https://cdn.modrinth.com/data/1bokaNcj/versions/MfxfgXaO/xaerominimap-fabric-26.3-26.6.2.jar"
+XAEROS_MINIMAP_SHA1="9b44e5718f9258ed32283a391e19a1d46464188a"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -90,6 +102,9 @@ download "$DNT_URL" "$DNT_FILE" "$DNT_SHA1"
 download "$LITHIUM_URL" "$LITHIUM_FILE" "$LITHIUM_SHA1"
 download "$FERRITECORE_URL" "$FERRITECORE_FILE" "$FERRITECORE_SHA1"
 download "$DISTANT_HORIZONS_URL" "$DISTANT_HORIZONS_FILE" "$DISTANT_HORIZONS_SHA1"
+download "$JADE_URL" "$JADE_FILE" "$JADE_SHA1"
+download "$APPLESKIN_URL" "$APPLESKIN_FILE" "$APPLESKIN_SHA1"
+download "$XAEROS_MINIMAP_URL" "$XAEROS_MINIMAP_FILE" "$XAEROS_MINIMAP_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -125,6 +140,24 @@ done
 for jar in mods/DistantHorizons-*.jar; do
   if [[ "$jar" != "$DISTANT_HORIZONS_FILE" ]]; then
     echo "Suppression de l'ancienne version de Distant Horizons : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/Jade-*.jar; do
+  if [[ "$jar" != "$JADE_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Jade : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/appleskin-*.jar; do
+  if [[ "$jar" != "$APPLESKIN_FILE" ]]; then
+    echo "Suppression de l'ancienne version d'AppleSkin : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/xaerominimap-*.jar; do
+  if [[ "$jar" != "$XAEROS_MINIMAP_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Xaero's Minimap : $jar"
     rm -f "$jar"
   fi
 done

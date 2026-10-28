@@ -20,7 +20,10 @@ if [[ ! -f server.jar \
   || ! -f mods/dungeons-and-taverns-6.0.2-fabric.jar \
   || ! -f mods/lithium-fabric-0.26.2+mc26.3.jar \
   || ! -f mods/ferritecore-9.0.0-fabric.jar \
-  || ! -f mods/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar ]]; then
+  || ! -f mods/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar \
+  || ! -f mods/Jade-mc26.3-Fabric-26.3.5.jar \
+  || ! -f mods/appleskin-fabric-mc26.3-3.0.10.jar \
+  || ! -f mods/xaerominimap-fabric-26.3-26.6.2.jar ]]; then
   echo "Fichiers manquants. Lance d'abord ./install.sh" >&2
   exit 1
 fi
