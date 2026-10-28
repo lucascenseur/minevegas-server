@@ -127,7 +127,7 @@ Le compte Minecraft doit être officiel. Le pseudo tapé dans `op` est celui du 
 
 ## Réglages
 
-`server.properties` fixe la survie, la difficulté normale, le PVP, les comptes officiels et le port. Baisse `view-distance` et `simulation-distance` si le VPS manque de CPU.
+`server.properties` fixe la survie, la difficulté normale, le PVP, les comptes officiels et le port. `view-distance` est à 16 et `simulation-distance` à 12. Monte jusqu'à 32 si le VPS suit, ou baisse si le CPU / la RAM saturent.
 
 `pause-when-empty-seconds=60` met le monde en pause après 60 secondes sans joueur. Le serveur se réveille quand quelqu'un se connecte. Mets `0` pour le laisser tourner en permanence.
 
