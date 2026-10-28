@@ -60,6 +60,11 @@ TRAVELERS_BACKPACK_FILE="mods/travelersbackpack-fabric-26.3-11.4.2.jar"
 TRAVELERS_BACKPACK_URL="https://cdn.modrinth.com/data/rlloIFEV/versions/GKDRZQKz/travelersbackpack-fabric-26.3-11.4.2.jar"
 TRAVELERS_BACKPACK_SHA1="db35a989b24a5dabbad9f1226c806de098f6c823"
 
+# Graves par lullaby (surtout serveur ; client optionnel).
+LY_GRAVES_FILE="mods/ly-graves-3.0.1.jar"
+LY_GRAVES_URL="https://cdn.modrinth.com/data/kieAM9Us/versions/5rgPAbeA/ly-graves-3.0.1.jar"
+LY_GRAVES_SHA1="1ad25b74b5857deb8601b68443e18a12579c46a1"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -116,6 +121,7 @@ download "$APPLESKIN_URL" "$APPLESKIN_FILE" "$APPLESKIN_SHA1"
 download "$XAEROS_MINIMAP_URL" "$XAEROS_MINIMAP_FILE" "$XAEROS_MINIMAP_SHA1"
 download "$FORGE_CONFIG_API_PORT_URL" "$FORGE_CONFIG_API_PORT_FILE" "$FORGE_CONFIG_API_PORT_SHA1"
 download "$TRAVELERS_BACKPACK_URL" "$TRAVELERS_BACKPACK_FILE" "$TRAVELERS_BACKPACK_SHA1"
+download "$LY_GRAVES_URL" "$LY_GRAVES_FILE" "$LY_GRAVES_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -181,6 +187,12 @@ done
 for jar in mods/travelersbackpack-*.jar; do
   if [[ "$jar" != "$TRAVELERS_BACKPACK_FILE" ]]; then
     echo "Suppression de l'ancienne version de Traveler's Backpack : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/ly-graves-*.jar; do
+  if [[ "$jar" != "$LY_GRAVES_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Graves : $jar"
     rm -f "$jar"
   fi
 done

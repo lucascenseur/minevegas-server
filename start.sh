@@ -25,7 +25,8 @@ if [[ ! -f server.jar \
   || ! -f mods/appleskin-fabric-mc26.3-3.0.10.jar \
   || ! -f mods/xaerominimap-fabric-26.3-26.6.2.jar \
   || ! -f mods/ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar \
-  || ! -f mods/travelersbackpack-fabric-26.3-11.4.2.jar ]]; then
+  || ! -f mods/travelersbackpack-fabric-26.3-11.4.2.jar \
+  || ! -f mods/ly-graves-3.0.1.jar ]]; then
   echo "Fichiers manquants. Lance d'abord ./install.sh" >&2
   exit 1
 fi
