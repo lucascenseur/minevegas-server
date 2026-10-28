@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap |
+| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -112,8 +112,10 @@ Le mod est client et serveur. Chaque joueur installe :
    - `Jade-mc26.3-Fabric-26.3.5.jar`
    - `appleskin-fabric-mc26.3-3.0.10.jar`
    - `xaerominimap-fabric-26.3-26.6.2.jar`
+   - `ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar`
+   - `travelersbackpack-fabric-26.3-11.4.2.jar`
 
-Lithium et FerriteCore sont des optimisations serveur : les joueurs n'en ont pas besoin. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant.
+Lithium et FerriteCore sont des optimisations serveur : les joueurs n'en ont pas besoin. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack et Forge Config API Port sont obligatoires côté client et serveur.
 
 Copie les jars client dans le dossier `mods` du profil Fabric. N'ajoute pas d'anciens mods `casinodeco` ou `casinosound` : MineVegas les remplace et refuse de démarrer avec eux.
 

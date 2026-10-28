@@ -51,6 +51,15 @@ XAEROS_MINIMAP_FILE="mods/xaerominimap-fabric-26.3-26.6.2.jar"
 XAEROS_MINIMAP_URL="https://cdn.modrinth.com/data/1bokaNcj/versions/MfxfgXaO/xaerominimap-fabric-26.3-26.6.2.jar"
 XAEROS_MINIMAP_SHA1="9b44e5718f9258ed32283a391e19a1d46464188a"
 
+# Dépendance obligatoire de Traveler's Backpack.
+FORGE_CONFIG_API_PORT_FILE="mods/ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar"
+FORGE_CONFIG_API_PORT_URL="https://cdn.modrinth.com/data/ohNO6lps/versions/JpKvrr9J/ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar"
+FORGE_CONFIG_API_PORT_SHA1="a0d802d2cb010a5054c72f1ccf248433b6e0bafb"
+
+TRAVELERS_BACKPACK_FILE="mods/travelersbackpack-fabric-26.3-11.4.2.jar"
+TRAVELERS_BACKPACK_URL="https://cdn.modrinth.com/data/rlloIFEV/versions/GKDRZQKz/travelersbackpack-fabric-26.3-11.4.2.jar"
+TRAVELERS_BACKPACK_SHA1="db35a989b24a5dabbad9f1226c806de098f6c823"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -105,6 +114,8 @@ download "$DISTANT_HORIZONS_URL" "$DISTANT_HORIZONS_FILE" "$DISTANT_HORIZONS_SHA
 download "$JADE_URL" "$JADE_FILE" "$JADE_SHA1"
 download "$APPLESKIN_URL" "$APPLESKIN_FILE" "$APPLESKIN_SHA1"
 download "$XAEROS_MINIMAP_URL" "$XAEROS_MINIMAP_FILE" "$XAEROS_MINIMAP_SHA1"
+download "$FORGE_CONFIG_API_PORT_URL" "$FORGE_CONFIG_API_PORT_FILE" "$FORGE_CONFIG_API_PORT_SHA1"
+download "$TRAVELERS_BACKPACK_URL" "$TRAVELERS_BACKPACK_FILE" "$TRAVELERS_BACKPACK_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -158,6 +169,18 @@ done
 for jar in mods/xaerominimap-*.jar; do
   if [[ "$jar" != "$XAEROS_MINIMAP_FILE" ]]; then
     echo "Suppression de l'ancienne version de Xaero's Minimap : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/ForgeConfigAPIPort-*.jar; do
+  if [[ "$jar" != "$FORGE_CONFIG_API_PORT_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Forge Config API Port : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/travelersbackpack-*.jar; do
+  if [[ "$jar" != "$TRAVELERS_BACKPACK_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Traveler's Backpack : $jar"
     rm -f "$jar"
   fi
 done
