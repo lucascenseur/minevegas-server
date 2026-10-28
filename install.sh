@@ -35,6 +35,10 @@ FERRITECORE_FILE="mods/ferritecore-9.0.0-fabric.jar"
 FERRITECORE_URL="https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar"
 FERRITECORE_SHA1="eac76ff0f3753422c61b2c44487d0d195d88d4bc"
 
+DISTANT_HORIZONS_FILE="mods/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar"
+DISTANT_HORIZONS_URL="https://cdn.modrinth.com/data/uCdwusMi/versions/TGgEbP9A/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar"
+DISTANT_HORIZONS_SHA1="310c0363068dfae18e91f799ed671a591b6ad49a"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -85,6 +89,7 @@ download "$MINEVEGAS_URL" "$MINEVEGAS_FILE" "$MINEVEGAS_SHA1"
 download "$DNT_URL" "$DNT_FILE" "$DNT_SHA1"
 download "$LITHIUM_URL" "$LITHIUM_FILE" "$LITHIUM_SHA1"
 download "$FERRITECORE_URL" "$FERRITECORE_FILE" "$FERRITECORE_SHA1"
+download "$DISTANT_HORIZONS_URL" "$DISTANT_HORIZONS_FILE" "$DISTANT_HORIZONS_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -114,6 +119,12 @@ done
 for jar in mods/ferritecore-*.jar; do
   if [[ "$jar" != "$FERRITECORE_FILE" ]]; then
     echo "Suppression de l'ancienne version de FerriteCore : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/DistantHorizons-*.jar; do
+  if [[ "$jar" != "$DISTANT_HORIZONS_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Distant Horizons : $jar"
     rm -f "$jar"
   fi
 done

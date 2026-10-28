@@ -19,7 +19,8 @@ if [[ ! -f server.jar \
   || ! -f mods/minevegas-casino-fabric-26.3-1.0.4.jar \
   || ! -f mods/dungeons-and-taverns-6.0.2-fabric.jar \
   || ! -f mods/lithium-fabric-0.26.2+mc26.3.jar \
-  || ! -f mods/ferritecore-9.0.0-fabric.jar ]]; then
+  || ! -f mods/ferritecore-9.0.0-fabric.jar \
+  || ! -f mods/DistantHorizons-3.3.4-26.3-fabric-neoforge.jar ]]; then
   echo "Fichiers manquants. Lance d'abord ./install.sh" >&2
   exit 1
 fi
