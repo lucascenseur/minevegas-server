@@ -47,6 +47,31 @@ if [[ ! -f eula.txt ]] || ! grep -q '^eula=true' eula.txt; then
   exit 1
 fi
 
+if [[ -f motd.txt ]]; then
+  python3 - <<'PY'
+from pathlib import Path
+import re
+
+lines = [line.rstrip("\n") for line in Path("motd.txt").read_text(encoding="utf-8").splitlines() if line.strip()]
+motd = "\\n".join(lines)
+props_path = Path("server.properties")
+text = props_path.read_text(encoding="utf-8") if props_path.exists() else ""
+replacement = "motd=" + motd
+if re.search(r"^motd=.*$", text, flags=re.M):
+    text = re.sub(r"^motd=.*$", replacement, text, count=1, flags=re.M)
+else:
+    if text and not text.endswith("\n"):
+        text += "\n"
+    text += replacement + "\n"
+props_path.write_text(text, encoding="utf-8")
+print("MOTD appliqué")
+PY
+fi
+
+if [[ ! -f server-icon.png ]]; then
+  echo "Astuce : ajoute server-icon.png (64x64) pour l'icône dans la liste des serveurs." >&2
+fi
+
 echo "Démarrage MineVegas Casino (mémoire ${MEMORY}, Java ${major})"
 exec java \
   -Xms"${MEMORY}" \

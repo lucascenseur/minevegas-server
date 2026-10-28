@@ -14,6 +14,8 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Port | TCP `25565` |
 | Joueurs | 20 |
 | RAM | 4 Go (`server.env`) |
+| Icône | `server-icon.png` (64×64) |
+| MOTD | `motd.txt` (couleurs Minecraft) |
 
 Le dépôt ne contient pas les jars. `install.sh` les télécharge et vérifie leur somme SHA1. Au premier `start.sh`, Fabric récupère le serveur officiel Mojang (environ 60 Mo).
 
@@ -132,6 +134,8 @@ Le compte Minecraft doit être officiel. Le pseudo tapé dans `op` est celui du 
 Le serveur de gestion à distance (`management-server-enabled`) est désactivé, et son secret est laissé vide. Ne le remplis pas dans git.
 
 `server.env` (créé au premier `start.sh` depuis `server.env.example`) contient la RAM. Il n'est pas versionné : un `git pull` ne l'écrase pas.
+
+`motd.txt` définit le message de la liste des serveurs (deux lignes, codes `§`). `start.sh` le recopie dans `server.properties` à chaque démarrage. `server-icon.png` doit faire exactement 64×64 pixels.
 
 ```bash
 MEMORY=4G
