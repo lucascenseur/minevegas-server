@@ -26,7 +26,13 @@ if [[ ! -f server.jar \
   || ! -f mods/xaerominimap-fabric-26.3-26.6.2.jar \
   || ! -f mods/ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar \
   || ! -f mods/travelersbackpack-fabric-26.3-11.4.2.jar \
-  || ! -f mods/ly-graves-3.0.1.jar ]]; then
+  || ! -f mods/polymer-bundled-0.18.5+26.3.jar \
+  || ! -f mods/graves-3.13.0+26.3.jar \
+  || ! -f mods/toms_storage_fabric-26.3-2.12.2.jar \
+  || ! -f mods/StorageDrawers-fabric-26.3.0.1.jar \
+  || ! -f mods/architectury-fabric-22.0.5.jar \
+  || ! -f mods/cloth-config-fabric-26.3.159.jar \
+  || ! -f mods/RoughlyEnoughItems-26.3.824.jar ]]; then
   echo "Fichiers manquants. Lance d'abord ./install.sh" >&2
   exit 1
 fi
