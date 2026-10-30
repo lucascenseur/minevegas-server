@@ -65,6 +65,15 @@ LY_GRAVES_FILE="mods/ly-graves-3.0.1.jar"
 LY_GRAVES_URL="https://cdn.modrinth.com/data/kieAM9Us/versions/5rgPAbeA/ly-graves-3.0.1.jar"
 LY_GRAVES_SHA1="1ad25b74b5857deb8601b68443e18a12579c46a1"
 
+# Stockage en réseau (terminal relié aux coffres), client et serveur.
+TOMS_STORAGE_FILE="mods/toms_storage_fabric-26.3-2.12.2.jar"
+TOMS_STORAGE_URL="https://cdn.modrinth.com/data/XZNI4Cpy/versions/e7S7Hc7o/toms_storage_fabric-26.3-2.12.2.jar"
+TOMS_STORAGE_SHA1="b6877dff0aa79379917bc43f387ed41f152a1c92"
+
+STORAGE_DRAWERS_FILE="mods/StorageDrawers-fabric-26.3.0.1.jar"
+STORAGE_DRAWERS_URL="https://cdn.modrinth.com/data/guitPqEi/versions/wE2d96Vp/StorageDrawers-fabric-26.3.0.1.jar"
+STORAGE_DRAWERS_SHA1="a90d324a8031fc9e8a966bcc7aa9931e0f0cb26f"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -122,6 +131,8 @@ download "$XAEROS_MINIMAP_URL" "$XAEROS_MINIMAP_FILE" "$XAEROS_MINIMAP_SHA1"
 download "$FORGE_CONFIG_API_PORT_URL" "$FORGE_CONFIG_API_PORT_FILE" "$FORGE_CONFIG_API_PORT_SHA1"
 download "$TRAVELERS_BACKPACK_URL" "$TRAVELERS_BACKPACK_FILE" "$TRAVELERS_BACKPACK_SHA1"
 download "$LY_GRAVES_URL" "$LY_GRAVES_FILE" "$LY_GRAVES_SHA1"
+download "$TOMS_STORAGE_URL" "$TOMS_STORAGE_FILE" "$TOMS_STORAGE_SHA1"
+download "$STORAGE_DRAWERS_URL" "$STORAGE_DRAWERS_FILE" "$STORAGE_DRAWERS_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -193,6 +204,18 @@ done
 for jar in mods/ly-graves-*.jar; do
   if [[ "$jar" != "$LY_GRAVES_FILE" ]]; then
     echo "Suppression de l'ancienne version de Graves : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/toms_storage_*.jar; do
+  if [[ "$jar" != "$TOMS_STORAGE_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Tom's Simple Storage : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/StorageDrawers-*.jar; do
+  if [[ "$jar" != "$STORAGE_DRAWERS_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Storage Drawers : $jar"
     rm -f "$jar"
   fi
 done

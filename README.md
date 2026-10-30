@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Graves (lullaby) |
+| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Graves (lullaby), Tom's Simple Storage, Storage Drawers |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -116,8 +116,24 @@ Le mod est client et serveur. Chaque joueur installe :
    - `xaerominimap-fabric-26.3-26.6.2.jar`
    - `ForgeConfigAPIPort-v26.3.1-mc26.3.x-Fabric.jar`
    - `travelersbackpack-fabric-26.3-11.4.2.jar`
+   - `toms_storage_fabric-26.3-2.12.2.jar`
+   - `StorageDrawers-fabric-26.3.0.1.jar`
 
-Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack et Forge Config API Port sont obligatoires côté client et serveur.
+Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack, Forge Config API Port, Tom's Simple Storage et Storage Drawers sont obligatoires côté client et serveur.
+
+### Tri d'inventaire (client uniquement, optionnel)
+
+[Inventory Profiles Next](https://modrinth.com/mod/inventory-profiles-next) trie l'inventaire et les coffres d'un clic. Il ne tourne que côté client et n'est pas installé sur le serveur. Chaque joueur qui le veut ajoute ces trois jars dans son dossier `mods` :
+
+- [InventoryProfilesNext-fabric-26.3-2.3.8.jar](https://cdn.modrinth.com/data/O7RBXm3n/versions/y8vT21Sb/InventoryProfilesNext-fabric-26.3-2.3.8.jar)
+- [libIPN-fabric-26.3-6.9.0.jar](https://cdn.modrinth.com/data/onSQdWhM/versions/aKBFonyQ/libIPN-fabric-26.3-6.9.0.jar)
+- [fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar](https://cdn.modrinth.com/data/Ha28R6CL/versions/SKW1BTL3/fabric-language-kotlin-1.14.2%2Bkotlin.2.4.21.jar)
+
+### Stockage
+
+[Tom's Simple Storage](https://modrinth.com/mod/toms-storage) relie des coffres et tonneaux vanilla à un terminal : place un **Inventory Connector** contre les coffres (ou relie-les avec des **Inventory Cables**), puis un **Storage Terminal** ou un **Crafting Terminal** sur le connecteur. Tout le contenu s'affiche et se cherche depuis le terminal.
+
+[Storage Drawers](https://modrinth.com/mod/storagedrawers) ajoute des tiroirs qui stockent une grande quantité d'un même objet. Un **Drawer Controller** regroupe les tiroirs voisins, et un Inventory Connector de Tom's Simple Storage posé contre ce contrôleur devrait voir leur contenu (à vérifier en jeu).
 
 Copie les jars client dans le dossier `mods` du profil Fabric. N'ajoute pas d'anciens mods `casinodeco` ou `casinosound` : MineVegas les remplace et refuse de démarrer avec eux.
 
