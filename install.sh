@@ -74,6 +74,19 @@ STORAGE_DRAWERS_FILE="mods/StorageDrawers-fabric-26.3.0.1.jar"
 STORAGE_DRAWERS_URL="https://cdn.modrinth.com/data/guitPqEi/versions/wE2d96Vp/StorageDrawers-fabric-26.3.0.1.jar"
 STORAGE_DRAWERS_SHA1="a90d324a8031fc9e8a966bcc7aa9931e0f0cb26f"
 
+# Roughly Enough Items (recettes et liste d'objets) et ses dépendances.
+ARCHITECTURY_FILE="mods/architectury-fabric-22.0.5.jar"
+ARCHITECTURY_URL="https://cdn.modrinth.com/data/lhGA9TYQ/versions/1pMaB6So/architectury-fabric-22.0.5.jar"
+ARCHITECTURY_SHA1="8c5f566e32bd47fbb80be4932b9be1cfa97c4e3a"
+
+CLOTH_CONFIG_FILE="mods/cloth-config-fabric-26.3.159.jar"
+CLOTH_CONFIG_URL="https://cdn.modrinth.com/data/9s6osm5g/versions/fg2uyxOW/cloth-config-fabric-26.3.159.jar"
+CLOTH_CONFIG_SHA1="9a5cce069380a2047250831dcb19f4ef1b15872d"
+
+REI_FILE="mods/RoughlyEnoughItems-26.3.824.jar"
+REI_URL="https://cdn.modrinth.com/data/nfn13YXA/versions/rKsAE6bX/RoughlyEnoughItems-26.3.824.jar"
+REI_SHA1="b7bfe27288f68027fab7277f4cf84b9d243f8978"
+
 SERVER_FILE="server.jar"
 SERVER_URL="https://meta.fabricmc.net/v2/versions/loader/${MC_VERSION}/${LOADER_VERSION}/${INSTALLER_VERSION}/server/jar"
 SERVER_SHA1="9f2e39ea6548d42ae9cdbd5b133a29aec0fb16c7"
@@ -133,6 +146,9 @@ download "$TRAVELERS_BACKPACK_URL" "$TRAVELERS_BACKPACK_FILE" "$TRAVELERS_BACKPA
 download "$LY_GRAVES_URL" "$LY_GRAVES_FILE" "$LY_GRAVES_SHA1"
 download "$TOMS_STORAGE_URL" "$TOMS_STORAGE_FILE" "$TOMS_STORAGE_SHA1"
 download "$STORAGE_DRAWERS_URL" "$STORAGE_DRAWERS_FILE" "$STORAGE_DRAWERS_SHA1"
+download "$ARCHITECTURY_URL" "$ARCHITECTURY_FILE" "$ARCHITECTURY_SHA1"
+download "$CLOTH_CONFIG_URL" "$CLOTH_CONFIG_FILE" "$CLOTH_CONFIG_SHA1"
+download "$REI_URL" "$REI_FILE" "$REI_SHA1"
 
 shopt -s nullglob
 for jar in mods/fabric-api-*.jar; do
@@ -216,6 +232,24 @@ done
 for jar in mods/StorageDrawers-*.jar; do
   if [[ "$jar" != "$STORAGE_DRAWERS_FILE" ]]; then
     echo "Suppression de l'ancienne version de Storage Drawers : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/architectury-*.jar; do
+  if [[ "$jar" != "$ARCHITECTURY_FILE" ]]; then
+    echo "Suppression de l'ancienne version d'Architectury API : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/cloth-config-*.jar; do
+  if [[ "$jar" != "$CLOTH_CONFIG_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Cloth Config : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/RoughlyEnoughItems-*.jar; do
+  if [[ "$jar" != "$REI_FILE" ]]; then
+    echo "Suppression de l'ancienne version de REI : $jar"
     rm -f "$jar"
   fi
 done

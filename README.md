@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Graves (lullaby), Tom's Simple Storage, Storage Drawers |
+| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Graves (lullaby), Tom's Simple Storage, Storage Drawers, REI |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -118,8 +118,11 @@ Le mod est client et serveur. Chaque joueur installe :
    - `travelersbackpack-fabric-26.3-11.4.2.jar`
    - `toms_storage_fabric-26.3-2.12.2.jar`
    - `StorageDrawers-fabric-26.3.0.1.jar`
+   - `RoughlyEnoughItems-26.3.824.jar`
+   - `architectury-fabric-22.0.5.jar`
+   - `cloth-config-fabric-26.3.159.jar`
 
-Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack, Forge Config API Port, Tom's Simple Storage et Storage Drawers sont obligatoires côté client et serveur.
+Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack, Forge Config API Port, Tom's Simple Storage et Storage Drawers sont obligatoires côté client et serveur. [REI](https://modrinth.com/mod/rei) (Roughly Enough Items) affiche les recettes et la liste des objets ; installe-le côté client avec Architectury API et Cloth Config pour en profiter. Côté serveur, il permet de remplir la grille de craft depuis une recette.
 
 ### Tri d'inventaire (client uniquement, optionnel)
 
