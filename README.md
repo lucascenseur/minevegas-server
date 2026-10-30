@@ -7,7 +7,7 @@ Serveur Minecraft **26.3** avec [MineVegas Casino](https://www.curseforge.com/mi
 | Version | Minecraft 26.3 |
 | Chargeur | Fabric Loader 0.20.1 |
 | Dépendance | Fabric API 0.165.0+26.3 |
-| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Graves (lullaby), Tom's Simple Storage, Storage Drawers, REI |
+| Mods | MineVegas, DnT, Lithium, FerriteCore, Distant Horizons, Jade, AppleSkin, Xaero's Minimap, Traveler's Backpack, Universal Graves, Tom's Simple Storage, Storage Drawers, REI |
 | Java | 25 ou plus récent |
 | Monde | Survie, difficulté normale, PVP activé |
 | Comptes | Officiels uniquement (`online-mode=true`) |
@@ -122,7 +122,7 @@ Le mod est client et serveur. Chaque joueur installe :
    - `architectury-fabric-22.0.5.jar`
    - `cloth-config-fabric-26.3.159.jar`
 
-Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack, Forge Config API Port, Tom's Simple Storage et Storage Drawers sont obligatoires côté client et serveur. [REI](https://modrinth.com/mod/rei) (Roughly Enough Items) affiche les recettes et la liste des objets ; installe-le côté client avec Architectury API et Cloth Config pour en profiter. Côté serveur, il permet de remplir la grille de craft depuis une recette.
+Lithium et FerriteCore sont surtout serveur, et Universal Graves (avec Polymer) uniquement serveur : les joueurs n'en ont pas besoin pour se connecter. Jade, AppleSkin, Xaero's Minimap et Distant Horizons s'installent surtout côté client ; sans eux tu te connectes, mais tu perds l'info-bulle, la faim détaillée, la minimap ou le rendu distant. Traveler's Backpack, Forge Config API Port, Tom's Simple Storage et Storage Drawers sont obligatoires côté client et serveur. [REI](https://modrinth.com/mod/rei) (Roughly Enough Items) affiche les recettes et la liste des objets ; installe-le côté client avec Architectury API et Cloth Config pour en profiter. Côté serveur, il permet de remplir la grille de craft depuis une recette.
 
 ### Tri d'inventaire (client uniquement, optionnel)
 
@@ -131,6 +131,12 @@ Lithium, FerriteCore et Graves (lullaby) sont surtout serveur : les joueurs n'en
 - [InventoryProfilesNext-fabric-26.3-2.3.8.jar](https://cdn.modrinth.com/data/O7RBXm3n/versions/y8vT21Sb/InventoryProfilesNext-fabric-26.3-2.3.8.jar)
 - [libIPN-fabric-26.3-6.9.0.jar](https://cdn.modrinth.com/data/onSQdWhM/versions/aKBFonyQ/libIPN-fabric-26.3-6.9.0.jar)
 - [fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar](https://cdn.modrinth.com/data/Ha28R6CL/versions/SKW1BTL3/fabric-language-kotlin-1.14.2%2Bkotlin.2.4.21.jar)
+
+### Tombes
+
+[Universal Graves](https://modrinth.com/mod/universal-graves) crée une tombe à chaque mort avec l'inventaire et l'XP. Chaque mort ajoute une tombe sans supprimer les précédentes, et elles ne disparaissent pas toutes seules. Pendant 15 minutes, seul le propriétaire peut ouvrir sa tombe. La config est dans `config/universal-graves/config.json`.
+
+Il remplace Graves (lullaby). Avant la mise à jour qui l'enlève, tape dans la console `function graves:uninstall` : la commande remet `keep_inventory` à `false`, fait tomber au sol le contenu des anciennes tombes et les efface. Sans ça, `keep_inventory` reste à `true` et aucune tombe n'apparaît.
 
 ### Stockage
 

@@ -60,10 +60,14 @@ TRAVELERS_BACKPACK_FILE="mods/travelersbackpack-fabric-26.3-11.4.2.jar"
 TRAVELERS_BACKPACK_URL="https://cdn.modrinth.com/data/rlloIFEV/versions/GKDRZQKz/travelersbackpack-fabric-26.3-11.4.2.jar"
 TRAVELERS_BACKPACK_SHA1="db35a989b24a5dabbad9f1226c806de098f6c823"
 
-# Graves par lullaby (surtout serveur ; client optionnel).
-LY_GRAVES_FILE="mods/ly-graves-3.0.1.jar"
-LY_GRAVES_URL="https://cdn.modrinth.com/data/kieAM9Us/versions/5rgPAbeA/ly-graves-3.0.1.jar"
-LY_GRAVES_SHA1="1ad25b74b5857deb8601b68443e18a12579c46a1"
+# Universal Graves par Patbox (serveur uniquement) et sa dépendance Polymer.
+POLYMER_FILE="mods/polymer-bundled-0.18.5+26.3.jar"
+POLYMER_URL="https://cdn.modrinth.com/data/xGdtZczs/versions/3fDXSiRx/polymer-bundled-0.18.5%2B26.3.jar"
+POLYMER_SHA1="abbda5a13ff4f4c6d8612900bc23bfe35e34e216"
+
+UNIVERSAL_GRAVES_FILE="mods/graves-3.13.0+26.3.jar"
+UNIVERSAL_GRAVES_URL="https://cdn.modrinth.com/data/yn9u3ypm/versions/r9hY06vQ/graves-3.13.0%2B26.3.jar"
+UNIVERSAL_GRAVES_SHA1="b18202703051275d9d4f7f7ddab18e54a21d14f5"
 
 # Stockage en réseau (terminal relié aux coffres), client et serveur.
 TOMS_STORAGE_FILE="mods/toms_storage_fabric-26.3-2.12.2.jar"
@@ -143,7 +147,8 @@ download "$APPLESKIN_URL" "$APPLESKIN_FILE" "$APPLESKIN_SHA1"
 download "$XAEROS_MINIMAP_URL" "$XAEROS_MINIMAP_FILE" "$XAEROS_MINIMAP_SHA1"
 download "$FORGE_CONFIG_API_PORT_URL" "$FORGE_CONFIG_API_PORT_FILE" "$FORGE_CONFIG_API_PORT_SHA1"
 download "$TRAVELERS_BACKPACK_URL" "$TRAVELERS_BACKPACK_FILE" "$TRAVELERS_BACKPACK_SHA1"
-download "$LY_GRAVES_URL" "$LY_GRAVES_FILE" "$LY_GRAVES_SHA1"
+download "$POLYMER_URL" "$POLYMER_FILE" "$POLYMER_SHA1"
+download "$UNIVERSAL_GRAVES_URL" "$UNIVERSAL_GRAVES_FILE" "$UNIVERSAL_GRAVES_SHA1"
 download "$TOMS_STORAGE_URL" "$TOMS_STORAGE_FILE" "$TOMS_STORAGE_SHA1"
 download "$STORAGE_DRAWERS_URL" "$STORAGE_DRAWERS_FILE" "$STORAGE_DRAWERS_SHA1"
 download "$ARCHITECTURY_URL" "$ARCHITECTURY_FILE" "$ARCHITECTURY_SHA1"
@@ -217,9 +222,20 @@ for jar in mods/travelersbackpack-*.jar; do
     rm -f "$jar"
   fi
 done
+# Graves (lullaby) est remplacé par Universal Graves.
 for jar in mods/ly-graves-*.jar; do
-  if [[ "$jar" != "$LY_GRAVES_FILE" ]]; then
-    echo "Suppression de l'ancienne version de Graves : $jar"
+  echo "Suppression de Graves (lullaby), remplacé par Universal Graves : $jar"
+  rm -f "$jar"
+done
+for jar in mods/graves-*.jar; do
+  if [[ "$jar" != "$UNIVERSAL_GRAVES_FILE" ]]; then
+    echo "Suppression de l'ancienne version d'Universal Graves : $jar"
+    rm -f "$jar"
+  fi
+done
+for jar in mods/polymer-bundled-*.jar; do
+  if [[ "$jar" != "$POLYMER_FILE" ]]; then
+    echo "Suppression de l'ancienne version de Polymer : $jar"
     rm -f "$jar"
   fi
 done
